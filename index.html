@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeByJavier · Desarrollador Web Full-Stack</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--
+            NAV
+    -->
+
+    <header class="header">
+        <nav class="nav">
+            <a href="#inicio" class="logo">CodeByJavier</a>
+            <ul class="nav__list">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!--
+            SECTION HERO
+        -->
+
+        <section id="inicio" class="hero">
+
+            <p class="hero__eyebrow">Hola, soy</p>
+            <h1 class="hero__name">Javier</h1>
+            <h2 class="hero__title">Desarrollador Web Full-Stack</h2>
+            <p class="hero__bio">
+                Desarrollador autodidacta. Aprendo construyendo proyectos reales,
+                de principio a fin, con HTML, CSS, JavaScript, React y Python.
+            </p>
+
+            <div class="hero__links">
+                <a href="mailto:apfjavier@gmail.com" class="hero__link">Email</a>
+                <a href="https://github.com/CodeByJavier" target="_blank" rel="noopener" class="hero__link">GitHub</a>
+                <a href="https://linkedin.com/in/javier-alejandro-perez-fernandez" target="_blank" rel="noopener" class="hero__link">LinkedIn</a>
+            </div>
+
+        </section>
+
+        <!--
+            SECTION ABOUT
+        -->
+
+        <section id="sobre-mi" class="about">
+
+            <h2 class="section-title">Sobre mí</h2>
+
+            <div class="about__grid">
+                <div class="about__text">
+                    <p>
+                        Empecé a programar por curiosidad y no he parado. Aprendo sobre todo
+                        montando proyectos reales de principio a fin — así es como de verdad
+                        se me quedan los conceptos.
+                    </p>
+                    <p>
+                        Ahora mismo estoy afianzando frontend con HTML, CSS y JavaScript,
+                        metiéndome en React, y explorando Python para el lado backend.
+                    </p>
+                </div>
+
+                <div class="about__skills">
+
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li class="skill--html">HTML5</li>
+                        <li class="skill--css">CSS3</li>
+                        <li class="skill--js">JavaScript</li>
+                        <li class="skill--react">React</li>
+                        <li class="skill--python">Python</li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!--
+            SECTION PROYECTOS
+        -->
+
+        <section id="proyectos" class="projects">
+
+            <h2 class="section-title">Proyectos</h2>
+
+            <div class="projects__scroller">
+
+                <div class="projects__track" data-projects-track>
+                    <article class="project-feature" data-reveal>
+                        <div class="project-feature__media">
+                            <img
+                                src="img/renova-hogar-preview.jpg"
+                                alt="Captura de pantalla de la landing page Renova Hogar"
+                            />
+                        </div>
+                        <div class="project-feature__body">
+                            <h3>Renova Hogar</h3>
+                            <p>
+                                Landing page para un negocio de reformas: diseño responsive,
+                                formulario con validación en tiempo real y animaciones al hacer scroll.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="skill--html">HTML5</li>
+                                <li class="skill--css">CSS3</li>
+                                <li class="skill--js">JavaScript</li>
+                            </ul>
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__link">Ver demo</a>
+                                <a href="#" class="project-card__link">Código</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-feature" data-reveal>
+                        <div class="project-feature__media">
+                            <img
+                                src="img/restaurante-preview.jpeg"
+                                alt="Captura de pantalla de la landing page Restaurante A Lareira"
+                            />
+                        </div>
+                        <div class="project-feature__body">
+                            <h3>Restaurante A Lareira</h3>
+                            <p>
+                                Landing page para un restaurante: diseño responsive,
+                                animaciones al hacer scroll.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="skill--html">HTML5</li>
+                                <li class="skill--css">CSS3</li>
+                                <li class="skill--js">JavaScript</li>
+                            </ul>
+                            <div class="project-card__links">
+                                <a href="https://codebyjavier.github.io/a-lareira/" class="project-card__link">Ver demo</a>
+                                <a href="https://github.com/CodeByJavier/a-lareira" class="project-card__link">Código</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-feature" data-reveal>
+                        <div class="project-feature__media">
+                            <img
+                                src="img/form-preview.jpeg"
+                                alt="Captura de pantalla de la Formulario dinamico"
+                            />
+                        </div>
+                        <div class="project-feature__body">
+                            <h3>Formulario Dinámico</h3>
+                            <p>
+                                Este es un formulario dinámico desarrollado con React, que permite gestionar
+                                una lista de usuarios. El formulario incluye funcionalidades de entrada de datos,
+                                edición, eliminación, paginación y filtro.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="skill--html">HTML5</li>
+                                <li class="skill--css">CSS3</li>
+                                <li class="skill--js">JavaScript</li>
+                                <li class="skill--react">React</li>
+                            </ul>
+                            <div class="project-card__links">
+                                <a href="https://codebyjavier.github.io/formulario-dinamico/" class="project-card__link">Ver demo</a>
+                                <a href="https://github.com/CodeByJavier/formulario-dinamico" class="project-card__link">Código</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            <div class="projects__dots" data-projects-dots></div>
+
+        </section>
+
+        <!--
+            SECTION CONTACTO
+        -->
+
+        <section id="contacto" class="contact">
+
+            <h2 class="section-title">Contacto</h2>
+            <p class="contact__text">
+                ¿Tienes un proyecto en mente o quieres charlar sobre desarrollo web?
+                Escríbeme, respondo rápido.
+            </p>
+
+            <a href="mailto:apfjavier@gmail.com" class="btn-primary">Escríbeme un email</a>
+
+            <div class="contact__socials">
+                <a href="https://github.com/CodeByJavier" target="_blank" rel="noopener" class="hero__link">GitHub</a>
+                <a href="https://linkedin.com/in/javier-alejandro-perez-fernandez" target="_blank" rel="noopener" class="hero__link">LinkedIn</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span data-year></span> CodeByJavier</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
