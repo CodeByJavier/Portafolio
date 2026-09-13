@@ -1,12 +1,6 @@
-setFooterYear();
 initScrollReveal();
 initSpotlight();
 initProjectsCarousel();
-
-function setFooterYear() {
-  const el = document.querySelector("[data-year]");
-  if (el) el.textContent = new Date().getFullYear();
-}
 
 function initScrollReveal() {
   const items = document.querySelectorAll("[data-reveal]");
@@ -50,6 +44,7 @@ function initSpotlight() {
 function initProjectsCarousel() {
   const track = document.querySelector("[data-projects-track]");
   const dotsWrap = document.querySelector("[data-projects-dots]");
+  const cards = document.querySelectorAll(".project-feature");
   if (!track) return;
 
   const slides = Array.from(track.children);
@@ -101,5 +96,8 @@ function initProjectsCarousel() {
     event.preventDefault();
     const delta = event.pageX - startX;
     track.scrollLeft = startScroll - delta;
+    cards.forEach((card) => {card.addEventListener("mouseup", (event) => {
+      card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });});
+    });
   });
 }

@@ -34,7 +34,7 @@
 
             <p class="hero__eyebrow">Hola, soy</p>
             <h1 class="hero__name">Javier</h1>
-            <h2 class="hero__title">Desarrollador Web Full-Stack</h2>
+            <h2 class="hero__title">Desarrollador Frontend</h2>
             <p class="hero__bio">
                 Desarrollador autodidacta. Aprendo construyendo proyectos reales,
                 de principio a fin, con HTML, CSS, JavaScript, React y Python.
@@ -60,7 +60,7 @@
                 <div class="about__text">
                     <p>
                         Empecé a programar por curiosidad y no he parado. Aprendo sobre todo
-                        montando proyectos reales de principio a fin — así es como de verdad
+                        montando proyectos reales de principio a fin, así es como de verdad
                         se me quedan los conceptos.
                     </p>
                     <p>
@@ -92,10 +92,57 @@
         <section id="proyectos" class="projects">
 
             <h2 class="section-title">Proyectos</h2>
-
             <div class="projects__scroller">
-
                 <div class="projects__track" data-projects-track>
+                    <article class="project-feature" data-reveal>
+                        <div class="project-feature__media">
+                            <img
+                                src="img/pokedex.jpeg"
+                                alt="Captura de pantalla de la Pokedex"
+                            />
+                        </div>
+                        <div class="project-feature__body">
+                            <h3>Pokedex</h3>
+                            <p>
+                                Una Pokédex interactiva construida con HTML, CSS y JavaScript puro (vanilla), 
+                                que consume la PokeAPI para mostrar información de Pokémon en tiempo real.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="skill--html">HTML5</li>
+                                <li class="skill--css">CSS3</li>
+                                <li class="skill--js">JavaScript</li>
+                            </ul>
+                            <div class="project-card__links">
+                                <a href="https://codebyjavier.github.io/Pokedex/" class="project-card__link">Ver demo</a>
+                                <a href="https://github.com/CodeByJavier/Pokedex" class="project-card__link">Código</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-feature" data-reveal>
+                        <div class="project-feature__media">
+                            <img
+                                src="img/github.jpeg"
+                                alt="Captura de pantalla de GitHub-Clone"
+                            />
+                        </div>
+                        <div class="project-feature__body">
+                            <h3>GitHub-Clone</h3>
+                            <p>
+                                El objetivo de este proyecto es reproducir una interfaz real con su maquetación 
+                                responsive y su comportamientousando sólo las tres tecnologías base, sin apoyarme en 
+                                ningún framework.
+                            </p>
+                            <ul class="project-card__tags">
+                                <li class="skill--html">HTML5</li>
+                                <li class="skill--css">CSS3</li>
+                                <li class="skill--js">JavaScript</li>
+                            </ul>
+                            <div class="project-card__links">
+                                <a href="https://codebyjavier.github.io/github-clone/" class="project-card__link">Ver demo</a>
+                                <a href="https://github.com/CodeByJavier/github-clone" class="project-card__link">Código</a>
+                            </div>
+                        </div>
+                    </article>
                     <article class="project-feature" data-reveal>
                         <div class="project-feature__media">
                             <img
@@ -120,57 +167,8 @@
                             </div>
                         </div>
                     </article>
-                    <article class="project-feature" data-reveal>
-                        <div class="project-feature__media">
-                            <img
-                                src="img/restaurante-preview.jpeg"
-                                alt="Captura de pantalla de la landing page Restaurante A Lareira"
-                            />
-                        </div>
-                        <div class="project-feature__body">
-                            <h3>Restaurante A Lareira</h3>
-                            <p>
-                                Landing page para un restaurante: diseño responsive,
-                                animaciones al hacer scroll.
-                            </p>
-                            <ul class="project-card__tags">
-                                <li class="skill--html">HTML5</li>
-                                <li class="skill--css">CSS3</li>
-                                <li class="skill--js">JavaScript</li>
-                            </ul>
-                            <div class="project-card__links">
-                                <a href="https://codebyjavier.github.io/a-lareira/" class="project-card__link">Ver demo</a>
-                                <a href="https://github.com/CodeByJavier/a-lareira" class="project-card__link">Código</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-feature" data-reveal>
-                        <div class="project-feature__media">
-                            <img
-                                src="img/form-preview.jpeg"
-                                alt="Captura de pantalla de la Formulario dinamico"
-                            />
-                        </div>
-                        <div class="project-feature__body">
-                            <h3>Formulario Dinámico</h3>
-                            <p>
-                                Este es un formulario dinámico desarrollado con React, que permite gestionar
-                                una lista de usuarios. El formulario incluye funcionalidades de entrada de datos,
-                                edición, eliminación, paginación y filtro.
-                            </p>
-                            <ul class="project-card__tags">
-                                <li class="skill--html">HTML5</li>
-                                <li class="skill--css">CSS3</li>
-                                <li class="skill--js">JavaScript</li>
-                                <li class="skill--react">React</li>
-                            </ul>
-                            <div class="project-card__links">
-                                <a href="https://codebyjavier.github.io/formulario-dinamico/" class="project-card__link">Ver demo</a>
-                                <a href="https://github.com/CodeByJavier/formulario-dinamico" class="project-card__link">Código</a>
-                            </div>
-                        </div>
-                    </article>
                 </div>
+            </div>
 
             <div class="projects__dots" data-projects-dots></div>
 
@@ -203,6 +201,6 @@
         <p>© <span data-year></span> CodeByJavier</p>
     </footer>
 
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
