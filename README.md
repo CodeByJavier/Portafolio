@@ -61,6 +61,13 @@ El nombre provisional es **Volta**. Para cambiarlo:
 3. Si es un cliente real, añade la clase `shop--real` y cambia el cartel a
    `<span class="shop__tag shop__tag--open">Abierto</span>`.
 
+## Al cambiar el CSS o el JavaScript
+
+En `index.html`, los archivos se cargan como `css/style.css?v=2` y
+`js/script.js?v=2`. Cuando cambies alguno, sube ese número (`?v=3`…). Si no,
+los navegadores que ya visitaron la web pueden seguir usando la versión vieja
+que tienen guardada y la página se ve rota hasta que pasa la caché.
+
 ## Estructura
 
 ```

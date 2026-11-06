@@ -23,7 +23,10 @@
        de los visitantes a Google (Google Fonts da problemas con el RGPD) -->
   <link rel="preload" href="assets/fonts/big-shoulders-display-800.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- ?v=… es la "versión" del archivo: al cambiar el CSS o el JS, sube el
+       número para que los navegadores descarguen el nuevo en vez de usar el
+       que tenían guardado (con el mismo nombre que el del portafolio antiguo) -->
+  <link rel="stylesheet" href="css/style.css?v=2" />
   <!-- Marca que hay JavaScript: así los neones empiezan apagados solo si
        después se van a poder encender -->
   <script>document.documentElement.classList.add("js");</script>
@@ -539,6 +542,6 @@
     </div>
   </footer>
 
-  <script src="js/script.js" defer></script>
+  <script src="js/script.js?v=2" defer></script>
 </body>
 </html>
