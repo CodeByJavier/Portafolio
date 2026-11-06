@@ -1,206 +1,544 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeByJavier · Desarrollador Web Full-Stack</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volta · Webs para negocios, terminadas antes de pagar</title>
+  <meta name="description" content="Páginas web a medida para negocios desde 350 € + IVA. Ves tu web terminada antes de pagar y solo pagas si te convence." />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Vista previa al compartir el enlace. og:image tiene que ser una URL
+       absoluta: cámbiala cuando la web tenga su dominio definitivo. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="Volta · Tu negocio, con la luz encendida" />
+  <meta property="og:description" content="Webs para negocios desde 350 € + IVA. La ves terminada antes de pagar." />
+  <meta property="og:image" content="https://codebyjavier.github.io/Portafolio/assets/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <!-- Fuentes alojadas en la propia web: carga más rápida y sin enviar datos
+       de los visitantes a Google (Google Fonts da problemas con el RGPD) -->
+  <link rel="preload" href="assets/fonts/big-shoulders-display-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Marca que hay JavaScript: así los neones empiezan apagados solo si
+       después se van a poder encender -->
+  <script>document.documentElement.classList.add("js");</script>
 </head>
-
 <body>
+  <!-- Iconos: se dibujan una vez y se reutilizan con <use href="#i-..."> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.9Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></symbol>
+  </svg>
 
-    <!--
-            NAV
-    -->
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <header class="header">
-        <nav class="nav">
-            <a href="#inicio" class="logo">CodeByJavier</a>
-            <ul class="nav__list">
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+  <!-- ===================== Cabecera ===================== -->
+  <header class="site-header" id="header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#inicio" aria-label="Volta, ir al inicio">
+        <!-- Logotipo provisional: una pila de Volta (discos apilados) con su chispa -->
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect x="7" y="6" width="18" height="4" rx="2" fill="currentColor" />
+          <rect x="7" y="12" width="18" height="4" rx="2" fill="currentColor" opacity=".55" />
+          <rect x="7" y="18" width="18" height="4" rx="2" fill="currentColor" />
+          <rect x="7" y="24" width="18" height="4" rx="2" fill="currentColor" opacity=".55" />
+          <path d="M27 2.5 24.6 7h3l-3.2 5" fill="none" stroke="#ffc874" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="brand__spark" />
+        </svg>
+        <span class="brand__name">Volta</span>
+      </a>
+
+      <nav class="site-nav" id="menu" aria-label="Principal">
+        <ul class="site-nav__list">
+          <li><a href="#calle">La calle</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#precio">Precio</a></li>
+          <li><a href="#recomienda">Recomienda</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+        </ul>
+        <a class="btn btn--lamp site-nav__cta" href="https://wa.me/34627579975" target="_blank" rel="noopener" data-wa data-wa-message="Hola, he visto la web de Volta y me interesa una página para mi negocio.">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+          Escribir por WhatsApp
+        </a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-btn__bars" aria-hidden="true"><span></span><span></span></span>
+        <span data-menu-label>Menú</span>
+      </button>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" hidden></div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Portada: la calle de noche ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <svg class="hero__stars" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false" fill="#fff"><circle cx="466" cy="78" r="1.2" opacity="0.38" class="tw"/><circle cx="1183" cy="49" r="1" opacity="0.38"/><circle cx="731" cy="19" r="1" opacity="0.58"/><circle cx="347" cy="287" r="0.6" opacity="0.8"/><circle cx="178" cy="116" r="1.2" opacity="0.67"/><circle cx="89" cy="304" r="0.6" opacity="0.89"/><circle cx="67" cy="446" r="0.8" opacity="0.58"/><circle cx="779" cy="297" r="1" opacity="0.8"/><circle cx="260" cy="302" r="1.2" opacity="0.45"/><circle cx="140" cy="370" r="1" opacity="0.38" class="tw"/><circle cx="297" cy="354" r="1" opacity="0.78"/><circle cx="670" cy="480" r="0.8" opacity="0.51"/><circle cx="1144" cy="363" r="0.8" opacity="0.4"/><circle cx="432" cy="257" r="0.8" opacity="0.75"/><circle cx="415" cy="510" r="0.6" opacity="0.63"/><circle cx="238" cy="178" r="1" opacity="0.58"/><circle cx="1385" cy="40" r="1" opacity="0.67"/><circle cx="1261" cy="163" r="1.2" opacity="0.54"/><circle cx="715" cy="414" r="0.6" opacity="0.81" class="tw"/><circle cx="1360" cy="247" r="1.2" opacity="0.39"/><circle cx="1053" cy="161" r="1" opacity="0.9"/><circle cx="1184" cy="148" r="1" opacity="0.84"/><circle cx="500" cy="489" r="0.8" opacity="0.44"/><circle cx="169" cy="31" r="1.6" opacity="0.51"/><circle cx="1063" cy="207" r="1.6" opacity="0.62"/><circle cx="240" cy="209" r="0.8" opacity="0.84"/><circle cx="1180" cy="449" r="0.8" opacity="0.74"/><circle cx="1421" cy="355" r="1" opacity="0.88" class="tw"/><circle cx="217" cy="92" r="0.8" opacity="0.71"/><circle cx="17" cy="432" r="0.8" opacity="0.49"/><circle cx="6" cy="218" r="0.8" opacity="0.69"/><circle cx="459" cy="65" r="1.6" opacity="0.63"/><circle cx="889" cy="352" r="0.6" opacity="0.6"/><circle cx="1254" cy="495" r="1.2" opacity="0.79"/><circle cx="565" cy="207" r="0.6" opacity="0.61"/><circle cx="577" cy="99" r="0.8" opacity="0.59"/><circle cx="158" cy="312" r="0.6" opacity="0.35" class="tw"/><circle cx="218" cy="53" r="0.8" opacity="0.69"/><circle cx="101" cy="108" r="1" opacity="0.43"/><circle cx="363" cy="181" r="0.8" opacity="0.61"/><circle cx="166" cy="254" r="1" opacity="0.61"/><circle cx="449" cy="75" r="1.2" opacity="0.54"/><circle cx="381" cy="431" r="0.8" opacity="0.63"/><circle cx="296" cy="495" r="0.8" opacity="0.43"/><circle cx="782" cy="14" r="1" opacity="0.51"/><circle cx="926" cy="47" r="1.6" opacity="0.49" class="tw"/><circle cx="528" cy="87" r="1.6" opacity="0.47"/><circle cx="780" cy="261" r="1.2" opacity="0.47"/><circle cx="1169" cy="512" r="1.6" opacity="0.46"/><circle cx="345" cy="208" r="1.6" opacity="0.47"/><circle cx="745" cy="185" r="0.6" opacity="0.89"/><circle cx="1138" cy="246" r="0.8" opacity="0.73"/><circle cx="1377" cy="233" r="1.2" opacity="0.89"/><circle cx="1375" cy="190" r="0.8" opacity="0.41"/><circle cx="677" cy="176" r="1" opacity="0.69" class="tw"/><circle cx="1296" cy="437" r="1" opacity="0.85"/><circle cx="495" cy="334" r="1.6" opacity="0.71"/><circle cx="1310" cy="407" r="1.6" opacity="0.46"/><circle cx="1280" cy="226" r="1.2" opacity="0.53"/><circle cx="1153" cy="505" r="1" opacity="0.6"/><circle cx="1070" cy="44" r="0.8" opacity="0.44"/><circle cx="183" cy="79" r="1" opacity="0.79"/><circle cx="210" cy="430" r="1" opacity="0.71"/><circle cx="505" cy="285" r="0.8" opacity="0.36" class="tw"/><circle cx="1151" cy="378" r="0.6" opacity="0.64"/><circle cx="1344" cy="226" r="1.6" opacity="0.46"/><circle cx="1258" cy="15" r="0.8" opacity="0.51"/><circle cx="346" cy="305" r="0.8" opacity="0.65"/><circle cx="1201" cy="32" r="1.2" opacity="0.54"/><circle cx="660" cy="303" r="1" opacity="0.58"/></svg>
+
+      <div class="container hero__inner">
+        <p class="hero__kicker">Webs para negocios · desde 350 € + IVA</p>
+        <h1 class="hero__title" id="heroTitle">
+          Tu negocio,<br />
+          con la <span class="hero__glow">luz</span> encendida
+        </h1>
+        <p class="hero__text">
+          Antes de entrar, la gente busca en el móvil. Si tu negocio no tiene web, para ellos
+          está a oscuras. Una web a medida, lista en una o dos semanas.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--lamp" href="https://wa.me/34627579975" target="_blank" rel="noopener" data-wa data-wa-message="Hola, he visto la web de Volta y me interesa una página para mi negocio.">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+            Escribir por WhatsApp
+          </a>
+          <a class="btn btn--line" href="#calle">Pasear por la calle</a>
+        </div>
+        <p class="hero__promise"><strong>Pagas al final.</strong> La ves terminada y solo pagas si te convence.</p>
+      </div>
+
+      <!-- Farola: su luz cae sobre la portada -->
+      <div class="lamp" aria-hidden="true">
+        <span class="lamp__light"></span>
+        <span class="lamp__head"></span>
+        <span class="lamp__pole"></span>
+      </div>
+
+      <img class="hero__skyline" src="assets/img/skyline.svg" width="1440" height="260" alt="" />
+      <div class="hero__ground" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== La calle: los escaparates ===================== -->
+    <section class="street" id="calle" aria-labelledby="streetTitle">
+      <div class="container">
+        <div class="street__head">
+          <p class="label">Calle de las webs · nº 1 al 9</p>
+          <h2 class="title title--night" id="streetTitle">Pasea por la calle</h2>
+          <p class="street__intro">
+            Cada escaparate es una web. Los que tienen el cartel de <strong class="tag-word tag-word--open">Abierto</strong>
+            son negocios reales; el resto son <strong class="tag-word">maquetas</strong> para que veas estilos distintos.
+            Pulsa un escaparate para entrar en la web; en el ordenador, pasa el ratón por encima para asomarte.
+          </p>
+        </div>
+
+        <p class="street__swipe" aria-hidden="true">Desliza para recorrer la calle <svg class="icon"><use href="#i-arrow" /></svg></p>
+
+        <ul class="street__list">
+          <li class="shop shop--real" style="--neon: #ffb347; --wall: #2b211a">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Cafetería</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/alambique-480.webp" srcset="assets/shots/alambique-480.webp 480w, assets/shots/alambique-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/alambique-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag shop__tag--open">Abierto</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 1</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://www.cafeteriaoalambique.es/" target="_blank" rel="noopener">O Alambique<span class="sr-only"> (cafetería en verín, cliente real; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Cafetería en Verín · <span class="shop__status">Cliente real</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop shop--real" style="--neon: #ffd36b; --wall: #1f1c18">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Numismática</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/auriense-480.webp" srcset="assets/shots/auriense-480.webp 480w, assets/shots/auriense-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/auriense-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag shop__tag--open">Abierto</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 2</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://auriensecollections.com/" target="_blank" rel="noopener">Auriense Collections<span class="sr-only"> (tienda online de numismática, cliente real; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Tienda online de numismática · <span class="shop__status">Cliente real</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop" style="--neon: #ff7a66; --wall: #26221f">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Reformas</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/reformas-480.webp" srcset="assets/shots/reformas-480.webp 480w, assets/shots/reformas-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/reformas-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag">Maqueta</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 3</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://codebyjavier.github.io/Renova-Hogar/" target="_blank" rel="noopener">Renova Hogar<span class="sr-only"> (empresa de reformas, maqueta; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Empresa de reformas · <span class="shop__status">Maqueta</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop" style="--neon: #5ee7ff; --wall: #1b2427">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Clínica dental</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/clinica-480.webp" srcset="assets/shots/clinica-480.webp 480w, assets/shots/clinica-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/clinica-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag">Maqueta</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 4</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://codebyjavier.github.io/Clinica-Dental/" target="_blank" rel="noopener">Aurora Dental<span class="sr-only"> (clínica dental, maqueta; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Clínica dental · <span class="shop__status">Maqueta</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop" style="--neon: #ff6fae; --wall: #2a1f25">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Peluquería</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/peluqueria-480.webp" srcset="assets/shots/peluqueria-480.webp 480w, assets/shots/peluqueria-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/peluqueria-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag">Maqueta</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 5</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://codebyjavier.github.io/Peluqueria/" target="_blank" rel="noopener">Alma Studio<span class="sr-only"> (peluquería, maqueta; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Peluquería · <span class="shop__status">Maqueta</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop" style="--neon: #ffd84d; --wall: #202226">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Taller</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/taller-480.webp" srcset="assets/shots/taller-480.webp 480w, assets/shots/taller-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/taller-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag">Maqueta</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 6</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://codebyjavier.github.io/Taller-Mecanico/" target="_blank" rel="noopener">Taller Bravo<span class="sr-only"> (taller mecánico, maqueta; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Taller mecánico · <span class="shop__status">Maqueta</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop" style="--neon: #a6f5bd; --wall: #232620">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Casa rural</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/casa-rural-480.webp" srcset="assets/shots/casa-rural-480.webp 480w, assets/shots/casa-rural-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/casa-rural-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag">Maqueta</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 7</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://codebyjavier.github.io/demo-casa-rural/" target="_blank" rel="noopener">Casa Verdés<span class="sr-only"> (casa rural y apartamentos, maqueta; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Casa rural y apartamentos · <span class="shop__status">Maqueta</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop" style="--neon: #f1eeff; --wall: #1d1d22">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Fotografía</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/fotografo-480.webp" srcset="assets/shots/fotografo-480.webp 480w, assets/shots/fotografo-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/fotografo-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag">Maqueta</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 8</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://codebyjavier.github.io/demo-fotografo/" target="_blank" rel="noopener">Iria Seoane<span class="sr-only"> (fotógrafa de paisaje, maqueta; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Fotógrafa de paisaje · <span class="shop__status">Maqueta</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+          <li class="shop" style="--neon: #6dfdb1; --wall: #1d2620">
+            <article class="shop__inner">
+              <p class="shop__sign" aria-hidden="true"><span>Aventura</span></p>
+              <div class="shop__canopy" aria-hidden="true"></div>
+              <div class="shop__front" aria-hidden="true">
+                <div class="shop__window">
+                  <img class="shop__screen" src="assets/shots/parque-480.webp" srcset="assets/shots/parque-480.webp 480w, assets/shots/parque-720.webp 720w" sizes="(max-width: 700px) 78vw, 360px" width="720" height="1350" loading="lazy" alt="" />
+                  <img class="shop__phone" src="assets/shots/parque-movil.webp" width="180" height="389" loading="lazy" alt="" />
+                </div>
+                <div class="shop__door"><span class="shop__tag">Maqueta</span></div>
+              </div>
+              <div class="shop__info">
+                <p class="shop__number">nº 9</p>
+                <h3 class="shop__name">
+                  <a class="shop__link" href="https://codebyjavier.github.io/demo-parque-aventura/" target="_blank" rel="noopener">Ramaxe<span class="sr-only"> (parque de aventura, maqueta; se abre en una pestaña nueva)</span></a>
+                </h3>
+                <p class="shop__meta">Parque de aventura · <span class="shop__status">Maqueta</span></p>
+                <svg class="shop__go icon" aria-hidden="true"><use href="#i-out" /></svg>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <!-- El local vacío: la llamada a la acción con forma de escaparate -->
+        <div class="vacant">
+          <div class="vacant__shutter" aria-hidden="true"><span class="vacant__gap"></span></div>
+          <div class="vacant__body">
+            <p class="vacant__sign">Local disponible</p>
+            <h2 class="vacant__title">El próximo escaparate puede ser el tuyo</h2>
+            <p>Cuenta qué negocio tienes y recibe tu web terminada para verla. No pagas nada hasta que te convenza.</p>
+            <a class="btn btn--lamp" href="https://wa.me/34627579975" target="_blank" rel="noopener" data-wa data-wa-message="Hola, tengo un negocio y me gustaría ver cómo quedaría mi web.">
+              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+              Quiero el mío
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paso de la noche al día -->
+    <div class="dawn" aria-hidden="true"></div>
+
+    <!-- ===================== Cómo funciona ===================== -->
+    <section class="section" id="como-funciona" aria-labelledby="stepsTitle">
+      <div class="container">
+        <div class="section-head">
+          <p class="label">Cómo funciona</p>
+          <h2 class="title" id="stepsTitle">Así se enciende una web</h2>
+          <p class="section-head__text">Cuatro pasos. El único que cuesta dinero es el último, y solo si quieres.</p>
+        </div>
+
+        <ol class="circuit" data-circuit>
+          <li class="circuit__step">
+            <span class="circuit__bulb" aria-hidden="true"></span>
+            <p class="circuit__num">01</p>
+            <h3>Escribes por WhatsApp</h3>
+            <p>Qué negocio tienes y qué te gustaría que viera la gente. Sin formularios ni llamadas comerciales.</p>
+          </li>
+          <li class="circuit__step">
+            <span class="circuit__bulb" aria-hidden="true"></span>
+            <p class="circuit__num">02</p>
+            <h3>Se hace con tus datos</h3>
+            <p>Nombre, servicios, fotos, horario y precios. Tú no tienes que preparar nada técnico.</p>
+          </li>
+          <li class="circuit__step">
+            <span class="circuit__bulb" aria-hidden="true"></span>
+            <p class="circuit__num">03</p>
+            <h3>La ves terminada</h3>
+            <p>Te llega un enlace para verla en el móvil, como la verán tus clientes. En una o dos semanas.</p>
+          </li>
+          <li class="circuit__step">
+            <span class="circuit__bulb" aria-hidden="true"></span>
+            <p class="circuit__num">04</p>
+            <h3>Pagas si te convence</h3>
+            <p>Si te gusta, se publica y pagas. Si no, no pagas nada. Así de sencillo.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== Precio: el ticket ===================== -->
+    <section class="section section--paper" id="precio" aria-labelledby="priceTitle">
+      <div class="container price">
+        <div class="price__text">
+          <p class="label">Qué incluye</p>
+          <h2 class="title" id="priceTitle">Un precio que cabe en un ticket</h2>
+          <p>Sin cuotas mensuales ni letra pequeña. Esto es lo que lleva cada web:</p>
+          <dl class="includes">
+            <div><dt>Diseño a medida</dt><dd>Hecha para tu negocio, no una plantilla con tu logo encima.</dd></div>
+            <div><dt>Pensada para el móvil</dt><dd>Es donde te van a buscar casi todos tus clientes.</dd></div>
+            <div><dt>Botón de WhatsApp</dt><dd>Para que te escriban con un toque, sin copiar números.</dd></div>
+            <div><dt>Lo básico para Google</dt><dd>Títulos, descripciones y velocidad para que te encuentren.</dd></div>
+            <div><dt>Cambios el primer mes</dt><dd>Un precio, una foto, el horario: gratis durante el primer mes.</dd></div>
+          </dl>
+        </div>
+
+        <!-- El ticket es texto real: se puede leer con lector de pantalla y copiar -->
+        <figure class="ticket" aria-labelledby="ticketCaption">
+          <figcaption class="sr-only" id="ticketCaption">Resumen del precio en forma de ticket de caja</figcaption>
+          <div class="ticket__paper">
+            <p class="ticket__brand">VOLTA</p>
+            <p class="ticket__sub">Webs para negocios</p>
+            <p class="ticket__meta"><span>Ticket nº 0001</span><span data-ticket-date>—</span></p>
+            <ul class="ticket__lines">
+              <li><span>Diseño a medida</span><span>incl.</span></li>
+              <li><span>Versión para móvil</span><span>incl.</span></li>
+              <li><span>Botón de WhatsApp</span><span>incl.</span></li>
+              <li><span>Básico para Google</span><span>incl.</span></li>
+              <li><span>Textos y fotos colocados</span><span>incl.</span></li>
+              <li><span>Cambios el primer mes</span><span>incl.</span></li>
             </ul>
-        </nav>
-    </header>
+            <p class="ticket__total"><span>Total</span><span>desde 350,00 €</span></p>
+            <p class="ticket__note">+ IVA · pago único · sin cuotas</p>
+            <p class="ticket__today"><span>Hoy pagas</span><span>0,00 €</span></p>
+            <p class="ticket__note">Pagas solo si te convence</p>
+            <div class="ticket__aside">
+              <p>Aparte, a tu nombre (Hostinger):</p>
+              <p class="ticket__row"><span>Alojamiento 4 años</span><span>~125–145 €</span></p>
+              <p class="ticket__small">plan Premium a 48 meses: unos 2,60–3 € al mes, con el dominio gratis el primer año</p>
+              <p class="ticket__row"><span>Dominio desde el 2.º año</span><span>~10–15 €/año</span></p>
+            </div>
+            <p class="ticket__thanks">*** Gracias por su visita ***</p>
+            <span class="ticket__barcode" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+    </section>
 
-    <main>
+    <!-- ===================== Programa de recomendación ===================== -->
+    <section class="section" id="recomienda" aria-labelledby="referTitle">
+      <div class="container refer">
+        <div class="refer__text">
+          <p class="label">Recomienda y gana</p>
+          <h2 class="title" id="referTitle">¿Conoces un negocio sin web?</h2>
+          <p>
+            Rotulistas, gestorías, interioristas, proveedores de hostelería&hellip; si tratas con negocios,
+            seguro que conoces alguno que la necesita. Si lo presentas y acaba teniendo su web,
+            te llevas una parte.
+          </p>
+          <a class="btn btn--ink" href="https://wa.me/34627579975" target="_blank" rel="noopener" data-wa data-wa-message="Hola, conozco negocios que necesitan web y me interesa el programa de recomendación.">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+            Quiero recomendar
+          </a>
+        </div>
 
-        <!--
-            SECTION HERO
-        -->
+        <div class="coupon">
+          <svg class="coupon__scissors icon" aria-hidden="true"><use href="#i-scissors" /></svg>
+          <p class="coupon__label">Vale por el</p>
+          <p class="coupon__value">15&nbsp;%</p>
+          <p class="coupon__desc">de cada web que salga de tu recomendación</p>
+          <dl class="coupon__terms">
+            <div><dt>Ejemplo</dt><dd>web de 350 € → <strong>52,50 € para ti</strong></dd></div>
+            <div><dt>Cuándo cobras</dt><dd>en cuanto el cliente paga su web</dd></div>
+            <div><dt>Límite</dt><dd>ninguno: cada negocio cuenta</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
-        <section id="inicio" class="hero">
+    <!-- ===================== Preguntas frecuentes ===================== -->
+    <section class="section section--paper" id="preguntas" aria-labelledby="faqTitle">
+      <div class="container faq-layout">
+        <div class="faq-layout__head">
+          <p class="label">Preguntas</p>
+          <h2 class="title" id="faqTitle">Lo que se pregunta antes de decir que sí</h2>
+          <p>¿Falta la tuya? Escribe por WhatsApp y la respuesta llega el mismo día.</p>
+        </div>
 
-            <p class="hero__eyebrow">Hola, soy</p>
-            <h1 class="hero__name">Javier</h1>
-            <h2 class="hero__title">Desarrollador Frontend</h2>
-            <p class="hero__bio">
-                Desarrollador autodidacta. Aprendo construyendo proyectos reales,
-                de principio a fin, con HTML, CSS, JavaScript, React y Python.
+        <div class="faq">
+          <details>
+            <summary>¿Y si no me gusta?</summary>
+            <p>No pagas. La web se enseña terminada y solo se cobra si te convence. No hay señal ni pago por adelantado.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tarda?</summary>
+            <p>Entre una y dos semanas desde que están tus datos: nombre, servicios, fotos, horario y precios.</p>
+          </details>
+          <details>
+            <summary>¿Tengo que preparar algo?</summary>
+            <p>Solo lo que ya tengas: logo, fotos, carta o lista de precios. Si te faltan fotos, se ponen unas provisionales hasta que tengas las tuyas.</p>
+          </details>
+          <details>
+            <summary>¿Qué son el dominio y el alojamiento?</summary>
+            <p>
+              Piensa en un local: el <strong>dominio</strong> es la dirección (tunegocio.es) y el
+              <strong>alojamiento</strong> es el alquiler del sitio donde vive la web. Se contratan a tu
+              nombre, así que la web es tuya.
             </p>
-
-            <div class="hero__links">
-                <a href="mailto:apfjavier@gmail.com" class="hero__link">Email</a>
-                <a href="https://github.com/CodeByJavier" target="_blank" rel="noopener" class="hero__link">GitHub</a>
-                <a href="https://linkedin.com/in/javier-alejandro-perez-fernandez" target="_blank" rel="noopener" class="hero__link">LinkedIn</a>
-            </div>
-
-        </section>
-
-        <!--
-            SECTION ABOUT
-        -->
-
-        <section id="sobre-mi" class="about">
-
-            <h2 class="section-title">Sobre mí</h2>
-
-            <div class="about__grid">
-                <div class="about__text">
-                    <p>
-                        Empecé a programar por curiosidad y no he parado. Aprendo sobre todo
-                        montando proyectos reales de principio a fin, así es como de verdad
-                        se me quedan los conceptos.
-                    </p>
-                    <p>
-                        Ahora mismo estoy afianzando frontend con HTML, CSS y JavaScript,
-                        metiéndome en React, y explorando Python para el lado backend.
-                    </p>
-                </div>
-
-                <div class="about__skills">
-
-                    <h3>Skills</h3>
-                    <ul class="skills-list">
-                        <li class="skill--html">HTML5</li>
-                        <li class="skill--css">CSS3</li>
-                        <li class="skill--js">JavaScript</li>
-                        <li class="skill--react">React</li>
-                        <li class="skill--python">Python</li>
-                    </ul>
-
-                </div>
-            </div>
-
-        </section>
-
-        <!--
-            SECTION PROYECTOS
-        -->
-
-        <section id="proyectos" class="projects">
-
-            <h2 class="section-title">Proyectos</h2>
-            <div class="projects__scroller">
-                <div class="projects__track" data-projects-track>
-                    <article class="project-feature" data-reveal>
-                        <div class="project-feature__media">
-                            <img
-                                src="img/pokedex.jpeg"
-                                alt="Captura de pantalla de la Pokedex"
-                            />
-                        </div>
-                        <div class="project-feature__body">
-                            <h3>Pokedex</h3>
-                            <p>
-                                Una Pokédex interactiva construida con HTML, CSS y JavaScript puro (vanilla), 
-                                que consume la PokeAPI para mostrar información de Pokémon en tiempo real.
-                            </p>
-                            <ul class="project-card__tags">
-                                <li class="skill--html">HTML5</li>
-                                <li class="skill--css">CSS3</li>
-                                <li class="skill--js">JavaScript</li>
-                            </ul>
-                            <div class="project-card__links">
-                                <a href="https://codebyjavier.github.io/Pokedex/" class="project-card__link">Ver demo</a>
-                                <a href="https://github.com/CodeByJavier/Pokedex" class="project-card__link">Código</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-feature" data-reveal>
-                        <div class="project-feature__media">
-                            <img
-                                src="img/github.jpeg"
-                                alt="Captura de pantalla de GitHub-Clone"
-                            />
-                        </div>
-                        <div class="project-feature__body">
-                            <h3>GitHub-Clone</h3>
-                            <p>
-                                El objetivo de este proyecto es reproducir una interfaz real con su maquetación 
-                                responsive y su comportamientousando sólo las tres tecnologías base, sin apoyarme en 
-                                ningún framework.
-                            </p>
-                            <ul class="project-card__tags">
-                                <li class="skill--html">HTML5</li>
-                                <li class="skill--css">CSS3</li>
-                                <li class="skill--js">JavaScript</li>
-                            </ul>
-                            <div class="project-card__links">
-                                <a href="https://codebyjavier.github.io/github-clone/" class="project-card__link">Ver demo</a>
-                                <a href="https://github.com/CodeByJavier/github-clone" class="project-card__link">Código</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-feature" data-reveal>
-                        <div class="project-feature__media">
-                            <img
-                                src="img/renova-hogar-preview.jpg"
-                                alt="Captura de pantalla de la landing page Renova Hogar"
-                            />
-                        </div>
-                        <div class="project-feature__body">
-                            <h3>Renova Hogar</h3>
-                            <p>
-                                Landing page para un negocio de reformas: diseño responsive,
-                                formulario con validación en tiempo real y animaciones al hacer scroll.
-                            </p>
-                            <ul class="project-card__tags">
-                                <li class="skill--html">HTML5</li>
-                                <li class="skill--css">CSS3</li>
-                                <li class="skill--js">JavaScript</li>
-                            </ul>
-                            <div class="project-card__links">
-                                <a href="https://codebyjavier.github.io/Renova-Hogar/" class="project-card__link">Ver demo</a>
-                                <a href="https://github.com/CodeByJavier/Renova-Hogar" class="project-card__link">Código</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <div class="projects__dots" data-projects-dots></div>
-
-        </section>
-
-        <!--
-            SECTION CONTACTO
-        -->
-
-        <section id="contacto" class="contact">
-
-            <h2 class="section-title">Contacto</h2>
-            <p class="contact__text">
-                ¿Tienes un proyecto en mente o quieres charlar sobre desarrollo web?
-                Escríbeme, respondo rápido.
+          </details>
+          <details>
+            <summary>¿Cuánto cuestan el dominio y el alojamiento?</summary>
+            <p>
+              La recomendación es <strong>Hostinger, plan Premium contratado a 48 meses</strong>: es cuando
+              más descuento tiene. Sale por unos <strong>2,60–3 € al mes</strong>, que se pagan de una vez
+              (entre 125 y 145 € por los cuatro años), y el <strong>dominio va gratis el primer año</strong>.
+              Desde el segundo año, el dominio cuesta unos 10–15 € al año. Al acabar los cuatro años, el plan
+              se renueva a su precio normal (unos 10 € al mes), así que conviene volver a contratarlo con oferta.
+              Los precios son de oferta y Hostinger los cambia a menudo: se confirman contigo antes de contratar.
             </p>
+          </details>
+          <details>
+            <summary>¿Puedo cambiar cosas después?</summary>
+            <p>Sí. Durante el primer mes, los cambios son gratis: un precio, una foto, el horario. Después, cada cambio se presupuesta aparte.</p>
+          </details>
+          <details>
+            <summary>¿El precio lleva IVA?</summary>
+            <p>No: son 350 € más el 21 % de IVA. Si tienes un negocio, normalmente ese IVA te lo puedes deducir.</p>
+          </details>
+          <details>
+            <summary>¿Qué son las «maquetas» de la calle?</summary>
+            <p>Negocios inventados para enseñar estilos distintos. Los escaparates con el cartel de «Abierto» son clientes reales.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-            <a href="mailto:apfjavier@gmail.com" class="btn-primary">Escríbeme un email</a>
+    <!-- ===================== Cierre: vuelta a la noche ===================== -->
+    <section class="closing" aria-labelledby="closingTitle">
+      <div class="container closing__inner">
+        <h2 class="closing__title" id="closingTitle">Es hora de <span class="hero__glow">encender</span> tu escaparate</h2>
+        <p>Escribe hoy y en una o dos semanas tendrás tu web lista para ver. Sin pagar nada hasta entonces.</p>
+        <a class="btn btn--lamp btn--big" href="https://wa.me/34627579975" target="_blank" rel="noopener" data-wa data-wa-message="Hola, he visto la web de Volta y me interesa una página para mi negocio.">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+          Escribir por WhatsApp
+        </a>
+        <p class="closing__phone">o al <a href="tel:+34627579975">627 57 99 75</a></p>
+      </div>
+    </section>
+  </main>
 
-            <div class="contact__socials">
-                <a href="https://github.com/CodeByJavier" target="_blank" rel="noopener" class="hero__link">GitHub</a>
-                <a href="https://linkedin.com/in/javier-alejandro-perez-fernandez" target="_blank" rel="noopener" class="hero__link">LinkedIn</a>
-            </div>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__brand">Volta <span>· webs para negocios</span></p>
+      <nav aria-label="Pie de página">
+        <a href="#calle">La calle</a>
+        <a href="#precio">Precio</a>
+        <a href="#recomienda">Recomienda</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+      <p class="site-footer__legal">© <span data-year>2026</span> Volta</p>
+    </div>
+  </footer>
 
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>© <span data-year></span> CodeByJavier</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
